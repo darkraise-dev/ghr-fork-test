@@ -1,0 +1,9 @@
+name: fork-check
+on: pull_request
+jobs:
+  probe:
+    runs-on: [self-hosted, homelab]
+    steps:
+      - run: echo "STEP-ONE ran on $RUNNER_NAME"
+      - if: always()
+        run: echo "ALWAYS-STEP-RAN"
